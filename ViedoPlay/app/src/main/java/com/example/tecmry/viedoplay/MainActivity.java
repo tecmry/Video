@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent=new Intent(MainActivity.this,Video.class);
                         intent.putExtra("video_url", newslist.get(position).getVideo_url());
                         intent.putExtra("process",newslist.get(position).getProcess());
-                        itmeNews.setProcess(process);
-                        startActivityForResult(intent,1);
+          
+                         startActivityForResult(intent,1);
                         break;
                     case R.id.IV_userImage:
                         Toast.makeText(MainActivity.this,"你点击了头像",Toast.LENGTH_SHORT).show();
@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             itmeNews.setUsername(jsonObject1.getString("name"));
             itmeNews.setVideo_url(jsonObject1.getString("video_uri"));
             itmeNews.setProfile_url(jsonObject1.getString("profile_image"));
+            itmeNews.setProcess(process);
             newslist.add(itmeNews);
             runOnUiThread(new Runnable() {
                 @Override
